@@ -1,0 +1,190 @@
+{
+  "title": "Access Control Policy Validation Evaluation",
+  "timestamp": "2025-12-20T07:02:54.019Z",
+  "testConfiguration": {
+    "policyTypes": [
+      "permission-based",
+      "time-based",
+      "geo-fencing"
+    ],
+    "totalTests": 11
+  },
+  "results": [
+    {
+      "testType": "Permission",
+      "docId": "doc1",
+      "userId": "user1@docguard.com",
+      "action": "read",
+      "expected": true,
+      "actual": true,
+      "correct": true,
+      "reason": "OK",
+      "responseTimeMs": "0.094",
+      "timestamp": "2025-12-20T07:02:50.995Z"
+    },
+    {
+      "testType": "Permission",
+      "docId": "doc1",
+      "userId": "user1@docguard.com",
+      "action": "download",
+      "expected": false,
+      "actual": false,
+      "correct": true,
+      "reason": "INSUFFICIENT_PERMISSION",
+      "responseTimeMs": "0.029",
+      "timestamp": "2025-12-20T07:02:50.997Z"
+    },
+    {
+      "testType": "Permission",
+      "docId": "doc1",
+      "userId": "user2@docguard.com",
+      "action": "download",
+      "expected": true,
+      "actual": true,
+      "correct": true,
+      "reason": "OK",
+      "responseTimeMs": "0.011",
+      "timestamp": "2025-12-20T07:02:50.997Z"
+    },
+    {
+      "testType": "Permission",
+      "docId": "doc1",
+      "userId": "user3@docguard.com",
+      "action": "read",
+      "expected": false,
+      "actual": false,
+      "correct": true,
+      "reason": "PERMISSION_DENIED",
+      "responseTimeMs": "0.005",
+      "timestamp": "2025-12-20T07:02:50.997Z"
+    },
+    {
+      "testType": "Permission",
+      "docId": "doc1",
+      "userId": "unauthorized@docguard.com",
+      "action": "read",
+      "expected": false,
+      "actual": false,
+      "correct": true,
+      "reason": "NO_PERMISSION",
+      "responseTimeMs": "0.227",
+      "timestamp": "2025-12-20T07:02:50.997Z"
+    },
+    {
+      "testType": "TimeBased",
+      "phase": "immediate",
+      "docId": "doc2",
+      "userId": "user1@docguard.com",
+      "expected": true,
+      "actual": true,
+      "correct": true,
+      "reason": "OK",
+      "responseTimeMs": "0.024",
+      "timestamp": "2025-12-20T07:02:51.000Z"
+    },
+    {
+      "testType": "TimeBased",
+      "phase": "after-expiry",
+      "docId": "doc2",
+      "userId": "user1@docguard.com",
+      "expected": false,
+      "actual": false,
+      "correct": true,
+      "reason": "ACCESS_EXPIRED",
+      "responseTimeMs": "0.028",
+      "timestamp": "2025-12-20T07:02:54.014Z"
+    },
+    {
+      "testType": "TimeBased",
+      "phase": "after-expiry",
+      "docId": "doc2",
+      "userId": "user2@docguard.com",
+      "expected": true,
+      "actual": true,
+      "correct": true,
+      "reason": "OK",
+      "responseTimeMs": "0.014",
+      "timestamp": "2025-12-20T07:02:54.014Z"
+    },
+    {
+      "testType": "Geofencing",
+      "docId": "doc3",
+      "userId": "user1@docguard.com",
+      "location": "exact-center",
+      "lat": 40.7128,
+      "lon": -74.006,
+      "expected": true,
+      "actual": true,
+      "correct": true,
+      "reason": "OK",
+      "responseTimeMs": "1.754",
+      "timestamp": "2025-12-20T07:02:54.018Z"
+    },
+    {
+      "testType": "Geofencing",
+      "docId": "doc3",
+      "userId": "user1@docguard.com",
+      "location": "close-inside",
+      "lat": 40.71282,
+      "lon": -74.006,
+      "expected": true,
+      "actual": true,
+      "correct": true,
+      "reason": "OK",
+      "responseTimeMs": "0.029",
+      "timestamp": "2025-12-20T07:02:54.018Z"
+    },
+    {
+      "testType": "Geofencing",
+      "docId": "doc3",
+      "userId": "user1@docguard.com",
+      "location": "far-outside",
+      "lat": 40.714,
+      "lon": -74.004,
+      "expected": false,
+      "actual": false,
+      "correct": true,
+      "reason": "OUTSIDE_GEOFENCE",
+      "responseTimeMs": "0.015",
+      "timestamp": "2025-12-20T07:02:54.018Z"
+    }
+  ],
+  "summary": {
+    "totalTests": 11,
+    "passedTests": 11,
+    "failedTests": 0,
+    "accuracy": "100.00%",
+    "avgResponseTimeMs": "0.203"
+  },
+  "byTestType": [
+    {
+      "type": "Permission",
+      "totalTests": 5,
+      "passed": 5,
+      "failed": 0,
+      "accuracy": "100.00%"
+    },
+    {
+      "type": "TimeBased",
+      "totalTests": 3,
+      "passed": 3,
+      "failed": 0,
+      "accuracy": "100.00%"
+    },
+    {
+      "type": "Geofencing",
+      "totalTests": 3,
+      "passed": 3,
+      "failed": 0,
+      "accuracy": "100.00%"
+    }
+  ],
+  "conclusions": [
+    "✅ Perfect policy enforcement",
+    "Permission-based access control working correctly",
+    "Time-based expiry enforced properly",
+    "Geo-fencing location validation accurate",
+    "Response times are consistently fast",
+    "Access control system provides reliable fine-grained authorization"
+  ]
+}

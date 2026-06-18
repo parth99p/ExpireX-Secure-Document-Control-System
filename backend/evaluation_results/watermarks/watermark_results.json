@@ -1,0 +1,245 @@
+{
+  "title": "Watermark Robustness Evaluation",
+  "timestamp": "2025-12-20T07:02:59.094Z",
+  "testConfiguration": {
+    "watermarkMethod": "LSB Steganography",
+    "watermarkText": "DOCGUARD_WATERMARK",
+    "attacksSimulated": [
+      "compression (70%)",
+      "gaussian noise (5%)",
+      "resizing (50%)",
+      "format conversion (multi-pass)"
+    ],
+    "totalAttacks": 12
+  },
+  "results": [
+    {
+      "test": "Original - Embed & Extract",
+      "fileName": "image.bin",
+      "fileSizeKB": "500.00",
+      "watermarkText": "DOCGUARD_WATERMARK",
+      "embedTimeMs": "0.988",
+      "extractTimeMs": "2755.753",
+      "similarityPercentage": "100.00",
+      "detectionSuccess": true,
+      "attack": "none",
+      "timestamp": "2025-12-20T07:02:49.433Z"
+    },
+    {
+      "test": "Attack - Compression",
+      "fileName": "image.bin",
+      "fileSizeKB": "500.00",
+      "watermarkText": "DOCGUARD_WATERMARK",
+      "extractTimeMs": "2755.753",
+      "similarityPercentage": "100.00",
+      "detectionSuccess": true,
+      "attack": "compression (70%)",
+      "attackIntensity": 30,
+      "timestamp": "2025-12-20T07:02:51.135Z"
+    },
+    {
+      "test": "Attack - Noise",
+      "fileName": "image.bin",
+      "fileSizeKB": "500.00",
+      "watermarkText": "DOCGUARD_WATERMARK",
+      "extractTimeMs": "2755.753",
+      "similarityPercentage": "95.83",
+      "detectionSuccess": true,
+      "attack": "gaussian noise (5%)",
+      "attackIntensity": 5,
+      "timestamp": "2025-12-20T07:02:53.400Z"
+    },
+    {
+      "test": "Attack - Resizing",
+      "fileName": "image.bin",
+      "fileSizeKB": "500.00",
+      "watermarkText": "DOCGUARD_WATERMARK",
+      "extractTimeMs": "2755.753",
+      "similarityPercentage": "70.83",
+      "detectionSuccess": false,
+      "attack": "resizing (50%)",
+      "attackIntensity": 50,
+      "timestamp": "2025-12-20T07:02:54.779Z"
+    },
+    {
+      "test": "Attack - Format Conversion",
+      "fileName": "image.bin",
+      "fileSizeKB": "500.00",
+      "watermarkText": "DOCGUARD_WATERMARK",
+      "extractTimeMs": "2755.753",
+      "similarityPercentage": "67.36",
+      "detectionSuccess": true,
+      "attack": "format conversion (multi-pass)",
+      "attackIntensity": "high",
+      "timestamp": "2025-12-20T07:02:56.612Z"
+    },
+    {
+      "test": "Original - Embed & Extract",
+      "fileName": "document.bin",
+      "fileSizeKB": "100.00",
+      "watermarkText": "DOCGUARD_WATERMARK",
+      "embedTimeMs": "0.262",
+      "extractTimeMs": "445.147",
+      "similarityPercentage": "100.00",
+      "detectionSuccess": true,
+      "attack": "none",
+      "timestamp": "2025-12-20T07:02:57.059Z"
+    },
+    {
+      "test": "Attack - Compression",
+      "fileName": "document.bin",
+      "fileSizeKB": "100.00",
+      "watermarkText": "DOCGUARD_WATERMARK",
+      "extractTimeMs": "445.147",
+      "similarityPercentage": "100.00",
+      "detectionSuccess": true,
+      "attack": "compression (70%)",
+      "attackIntensity": 30,
+      "timestamp": "2025-12-20T07:02:57.341Z"
+    },
+    {
+      "test": "Attack - Noise",
+      "fileName": "document.bin",
+      "fileSizeKB": "100.00",
+      "watermarkText": "DOCGUARD_WATERMARK",
+      "extractTimeMs": "445.147",
+      "similarityPercentage": "99.31",
+      "detectionSuccess": true,
+      "attack": "gaussian noise (5%)",
+      "attackIntensity": 5,
+      "timestamp": "2025-12-20T07:02:57.778Z"
+    },
+    {
+      "test": "Attack - Resizing",
+      "fileName": "document.bin",
+      "fileSizeKB": "100.00",
+      "watermarkText": "DOCGUARD_WATERMARK",
+      "extractTimeMs": "445.147",
+      "similarityPercentage": "68.06",
+      "detectionSuccess": false,
+      "attack": "resizing (50%)",
+      "attackIntensity": 50,
+      "timestamp": "2025-12-20T07:02:57.969Z"
+    },
+    {
+      "test": "Attack - Format Conversion",
+      "fileName": "document.bin",
+      "fileSizeKB": "100.00",
+      "watermarkText": "DOCGUARD_WATERMARK",
+      "extractTimeMs": "445.147",
+      "similarityPercentage": "68.75",
+      "detectionSuccess": true,
+      "attack": "format conversion (multi-pass)",
+      "attackIntensity": "high",
+      "timestamp": "2025-12-20T07:02:58.246Z"
+    },
+    {
+      "test": "Original - Embed & Extract",
+      "fileName": "data.bin",
+      "fileSizeKB": "50.00",
+      "watermarkText": "DOCGUARD_WATERMARK",
+      "embedTimeMs": "0.088",
+      "extractTimeMs": "232.466",
+      "similarityPercentage": "100.00",
+      "detectionSuccess": true,
+      "attack": "none",
+      "timestamp": "2025-12-20T07:02:58.480Z"
+    },
+    {
+      "test": "Attack - Compression",
+      "fileName": "data.bin",
+      "fileSizeKB": "50.00",
+      "watermarkText": "DOCGUARD_WATERMARK",
+      "extractTimeMs": "232.466",
+      "similarityPercentage": "100.00",
+      "detectionSuccess": true,
+      "attack": "compression (70%)",
+      "attackIntensity": 30,
+      "timestamp": "2025-12-20T07:02:58.622Z"
+    },
+    {
+      "test": "Attack - Noise",
+      "fileName": "data.bin",
+      "fileSizeKB": "50.00",
+      "watermarkText": "DOCGUARD_WATERMARK",
+      "extractTimeMs": "232.466",
+      "similarityPercentage": "97.22",
+      "detectionSuccess": true,
+      "attack": "gaussian noise (5%)",
+      "attackIntensity": 5,
+      "timestamp": "2025-12-20T07:02:58.842Z"
+    },
+    {
+      "test": "Attack - Resizing",
+      "fileName": "data.bin",
+      "fileSizeKB": "50.00",
+      "watermarkText": "DOCGUARD_WATERMARK",
+      "extractTimeMs": "232.466",
+      "similarityPercentage": "65.97",
+      "detectionSuccess": false,
+      "attack": "resizing (50%)",
+      "attackIntensity": 50,
+      "timestamp": "2025-12-20T07:02:58.944Z"
+    },
+    {
+      "test": "Attack - Format Conversion",
+      "fileName": "data.bin",
+      "fileSizeKB": "50.00",
+      "watermarkText": "DOCGUARD_WATERMARK",
+      "extractTimeMs": "232.466",
+      "similarityPercentage": "65.97",
+      "detectionSuccess": true,
+      "attack": "format conversion (multi-pass)",
+      "attackIntensity": "high",
+      "timestamp": "2025-12-20T07:02:59.093Z"
+    }
+  ],
+  "summary": {
+    "totalTests": 15,
+    "detectedTests": 12,
+    "detectionAccuracy": "80.00%",
+    "avgSimilarity": "86.62%",
+    "originalFilesTestsRun": 3,
+    "originalFilesDetected": 3,
+    "attackTestsRun": 12,
+    "attacksSuccessfullyDetected": 9
+  },
+  "attackSummary": [
+    {
+      "attack": "compression (70%)",
+      "testsRun": 3,
+      "successfulDetections": 3,
+      "detectionRate": "100.00%",
+      "avgSimilarity": "100.00%"
+    },
+    {
+      "attack": "gaussian noise (5%)",
+      "testsRun": 3,
+      "successfulDetections": 3,
+      "detectionRate": "100.00%",
+      "avgSimilarity": "97.45%"
+    },
+    {
+      "attack": "resizing (50%)",
+      "testsRun": 3,
+      "successfulDetections": 0,
+      "detectionRate": "0.00%",
+      "avgSimilarity": "68.29%"
+    },
+    {
+      "attack": "format conversion (multi-pass)",
+      "testsRun": 3,
+      "successfulDetections": 3,
+      "detectionRate": "100.00%",
+      "avgSimilarity": "67.36%"
+    }
+  ],
+  "conclusions": [
+    "⚠️ Watermark needs improvement",
+    "Watermark survives compression attacks well",
+    "Watermark resilient to mild noise",
+    "Format conversion causes highest accuracy loss (expected)",
+    "Watermark provides forensic evidence of ownership",
+    "System provides adequate anti-tampering protection"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@azure/storage-blob": "^12.29.1",
+    "@react-google-maps/api": "^2.20.7",
+    "axios": "^1.12.2",
+    "dotenv": "^17.2.2",
+    "leaflet": "^1.9.4",
+    "react-leaflet": "^5.0.0",
+    "react-router-dom": "^6.18.0",
+    "react-scripts": "^5.0.1",
+    "sharp": "^0.34.5",
+    "turf": "^3.0.14"
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "title": "Anomaly Detection Evaluation",
+  "timestamp": "2025-12-20T07:02:55.322Z",
+  "testConfiguration": {
+    "anomalyTypes": [
+      "FAILED_LOGIN",
+      "EXCESSIVE_DOWNLOAD",
+      "GEO_VIOLATION",
+      "INVALID_TOKEN",
+      "UNAUTHORIZED_ACCESS"
+    ],
+    "totalTests": 10,
+    "thresholds": {
+      "failedLoginAttempts": 5,
+      "downloadsPerMinute": 10,
+      "maxGeoDistanceKm": 100,
+      "tokenValidation": "length >= 32 && base64-like"
+    }
+  },
+  "results": [
+    {
+      "test": "Failed Login - Normal",
+      "anomalyType": "FAILED_LOGIN",
+      "expected": false,
+      "actual": false,
+      "correct": true,
+      "attempts": 2,
+      "threshold": 5,
+      "severity": "LOW",
+      "confidence": "0.00",
+      "detectionTimeMs": "0.004",
+      "timestamp": "2025-12-20T07:02:55.310Z"
+    },
+    {
+      "test": "Failed Login - Anomaly",
+      "anomalyType": "FAILED_LOGIN",
+      "expected": true,
+      "actual": true,
+      "correct": true,
+      "attempts": 8,
+      "threshold": 5,
+      "severity": "HIGH",
+      "confidence": "100.00",
+      "detectionTimeMs": "0.004",
+      "timestamp": "2025-12-20T07:02:55.312Z"
+    },
+    {
+      "test": "Excessive Download - Normal",
+      "anomalyType": "EXCESSIVE_DOWNLOAD",
+      "expected": false,
+      "actual": false,
+      "correct": true,
+      "downloads": 3,
+      "threshold": 10,
+      "severity": "LOW",
+      "confidence": "0.00",
+      "detectionTimeMs": "0.004",
+      "timestamp": "2025-12-20T07:02:55.314Z"
+    },
+    {
+      "test": "Excessive Download - Anomaly",
+      "anomalyType": "EXCESSIVE_DOWNLOAD",
+      "expected": true,
+      "actual": true,
+      "correct": true,
+      "downloads": 25,
+      "threshold": 10,
+      "severity": "MEDIUM",
+      "confidence": "100.00",
+      "detectionTimeMs": "0.002",
+      "timestamp": "2025-12-20T07:02:55.314Z"
+    },
+    {
+      "test": "Geo-Violation - Normal",
+      "anomalyType": "GEO_VIOLATION",
+      "expected": false,
+      "actual": false,
+      "correct": true,
+      "distance": "0.10km",
+      "threshold": "100km",
+      "severity": "LOW",
+      "confidence": "0.00",
+      "detectionTimeMs": "0.061",
+      "timestamp": "2025-12-20T07:02:55.317Z"
+    },
+    {
+      "test": "Geo-Violation - Anomaly",
+      "anomalyType": "GEO_VIOLATION",
+      "expected": true,
+      "actual": true,
+      "correct": true,
+      "distance": "1517.76km",
+      "threshold": "100km",
+      "severity": "HIGH",
+      "confidence": "100.00",
+      "detectionTimeMs": "0.005",
+      "timestamp": "2025-12-20T07:02:55.317Z"
+    },
+    {
+      "test": "Invalid Token - Valid",
+      "anomalyType": "INVALID_TOKEN",
+      "expected": false,
+      "actual": true,
+      "correct": false,
+      "severity": "CRITICAL",
+      "confidence": "95.00",
+      "detectionTimeMs": "0.124",
+      "timestamp": "2025-12-20T07:02:55.319Z"
+    },
+    {
+      "test": "Invalid Token - Invalid",
+      "anomalyType": "INVALID_TOKEN",
+      "expected": true,
+      "actual": true,
+      "correct": true,
+      "severity": "CRITICAL",
+      "confidence": "95.00",
+      "detectionTimeMs": "0.002",
+      "timestamp": "2025-12-20T07:02:55.319Z"
+    },
+    {
+      "test": "Unauthorized Access - Authorized",
+      "anomalyType": "UNAUTHORIZED_ACCESS",
+      "expected": false,
+      "actual": false,
+      "correct": true,
+      "requiredPermission": "read",
+      "userPermissions": [
+        "read",
+        "download"
+      ],
+      "severity": "LOW",
+      "confidence": "0.00",
+      "detectionTimeMs": "0.004",
+      "timestamp": "2025-12-20T07:02:55.320Z"
+    },
+    {
+      "test": "Unauthorized Access - Unauthorized",
+      "anomalyType": "UNAUTHORIZED_ACCESS",
+      "expected": true,
+      "actual": true,
+      "correct": true,
+      "requiredPermission": "admin",
+      "userPermissions": [
+        "read"
+      ],
+      "severity": "HIGH",
+      "confidence": "100.00",
+      "detectionTimeMs": "0.002",
+      "timestamp": "2025-12-20T07:02:55.320Z"
+    }
+  ],
+  "summary": {
+    "totalTests": 10,
+    "correctDetections": 9,
+    "incorrectDetections": 1,
+    "accuracy": "90.00%",
+    "falsePositives": 1,
+    "falseNegatives": 0,
+    "avgDetectionTimeMs": "0.021",
+    "avgConfidenceScore": "59.00"
+  },
+  "byAnomalyType": [
+    {
+      "type": "FAILED_LOGIN",
+      "totalTests": 2,
+      "correctDetections": 2,
+      "accuracy": "100.00%"
+    },
+    {
+      "type": "EXCESSIVE_DOWNLOAD",
+      "totalTests": 2,
+      "correctDetections": 2,
+      "accuracy": "100.00%"
+    },
+    {
+      "type": "GEO_VIOLATION",
+      "totalTests": 2,
+      "correctDetections": 2,
+      "accuracy": "100.00%"
+    },
+    {
+      "type": "INVALID_TOKEN",
+      "totalTests": 2,
+      "correctDetections": 1,
+      "accuracy": "50.00%"
+    },
+    {
+      "type": "UNAUTHORIZED_ACCESS",
+      "totalTests": 2,
+      "correctDetections": 2,
+      "accuracy": "100.00%"
+    }
+  ],
+  "conclusions": [
+    "⚠️ Anomaly detection accuracy below 100%",
+    "⚠️ 1 false positive(s)",
+    "✅ No false negatives",
+    "Detection is real-time (~0.021ms)",
+    "Average confidence score: 59.00%",
+    "System effectively detects major anomaly types",
+    "Suitable for real-time security monitoring"
+  ]
+}

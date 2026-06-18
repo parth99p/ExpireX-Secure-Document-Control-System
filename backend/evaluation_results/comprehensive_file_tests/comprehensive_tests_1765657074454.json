@@ -1,0 +1,119 @@
+{
+  "timestamp": "2025-12-13T20:17:54.454Z",
+  "results": [
+    {
+      "file": "sample.pdf",
+      "sizeBytes": 865,
+      "encryption": {
+        "encMs": 11.023,
+        "decMs": 0.422,
+        "integrity": true,
+        "throughputMBps": 0.072
+      },
+      "signature": {
+        "sigMs": 2.538,
+        "verifyMs": 0.24,
+        "valid": true
+      },
+      "watermark": {
+        "wmMs": 51.776,
+        "changed": true
+      },
+      "access": {
+        "roleResults": {
+          "admin": {
+            "view": true,
+            "download": true,
+            "share": true
+          },
+          "editor": {
+            "view": true,
+            "download": false,
+            "share": true
+          },
+          "user": {
+            "view": true,
+            "download": true,
+            "share": false
+          },
+          "guest": {
+            "view": false,
+            "download": false,
+            "share": false
+          }
+        },
+        "location": {
+          "inRange": {
+            "isValid": true,
+            "distance": 22,
+            "radius": 1000,
+            "locationName": "TestLoc",
+            "reason": "Within allowed location: TestLoc (22m from center)"
+          },
+          "outRange": {
+            "isValid": false,
+            "reason": "Outside all allowed locations"
+          },
+          "checkMs": 1.284
+        }
+      }
+    },
+    {
+      "file": "sample.png",
+      "sizeBytes": 68,
+      "encryption": {
+        "encMs": 0.425,
+        "decMs": 0.475,
+        "integrity": true,
+        "throughputMBps": 0.072
+      },
+      "signature": {
+        "sigMs": 0.069,
+        "verifyMs": 0.078,
+        "valid": true
+      },
+      "watermark": {
+        "wmMs": 21467.775,
+        "changed": true
+      },
+      "access": {
+        "roleResults": {
+          "admin": {
+            "view": true,
+            "download": true,
+            "share": true
+          },
+          "editor": {
+            "view": true,
+            "download": false,
+            "share": true
+          },
+          "user": {
+            "view": true,
+            "download": true,
+            "share": false
+          },
+          "guest": {
+            "view": false,
+            "download": false,
+            "share": false
+          }
+        },
+        "location": {
+          "inRange": {
+            "isValid": true,
+            "distance": 22,
+            "radius": 1000,
+            "locationName": "TestLoc",
+            "reason": "Within allowed location: TestLoc (22m from center)"
+          },
+          "outRange": {
+            "isValid": false,
+            "reason": "Outside all allowed locations"
+          },
+          "checkMs": 0.163
+        }
+      }
+    }
+  ]
+}
